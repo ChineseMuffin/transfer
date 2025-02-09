@@ -58,8 +58,9 @@ export function compare(balance1, balance2) {
     let eachDigit1 = eachDigit(balance1);
     let eachDigit2 = eachDigit(balance2);
     const maxDigits = Math.max(eachDigit1.length, eachDigit2.length);
-    eachDigit1 += [0] * (maxDigits - eachDigit1.length);
-    eachDigit2 += [0] * (maxDigits - eachDigit2.length);
+    for (let i = 0; i < maxDigits - eachDigit1.length; i++) eachDigit1 += [0];
+    for (let i = 0; i < maxDigits - eachDigit2.length; i++) eachDigit2 += [0];
+
     for (let i = 0; i < maxDigits; i++) {
         let result = compareDigit(eachDigit1[i], eachDigit2[i]);
         if (result == 0) continue;
