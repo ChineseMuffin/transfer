@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>キリのいい振替</title>
+    <meta name="viewport" content="width=500">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <h1>キリのいい振替</h1>
+    <div>口座から口座に振替を行って、残高をキリのいい数字にするための計算機です。</div>
+    <form id="form">
+        <span>
+            <p>
+                from 口座1
+            </p>
+            <p>
+                <label for="balance1">残高1</label>
+                <input type="number" name="balance1">
+            </p>
+        </span>
+        <span>
+            <p>振替額</p>
+            <p id="transfer"></p>
+        </span>
+        <span>
+            <p>
+                to 口座2
+            </p>
+            <p>
+                <label for="balance2">残高2</label>
+                <input type="number" name="balance2">
+            </p>
+        </span>
+    </form>
+
+    <script type="module" src="./transfer.mjs"></script>
+    <script type="module" src="./index.mjs"></script>
+</body>
+
+</html>
