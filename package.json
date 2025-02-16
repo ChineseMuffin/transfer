@@ -2,6 +2,10 @@
   "name": "transfer",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "20.x"
+  },
+  "engineStrict": true,
   "main": "transfer.js",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
