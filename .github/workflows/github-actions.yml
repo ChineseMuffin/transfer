@@ -25,6 +25,7 @@ jobs:
           ACTIONS_STEP_DEBUG: "true"
           CI: "true"
           NODE_OPTIONS: "--trace-warnings"
+        run: echo "Envitonment variables set" 
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
