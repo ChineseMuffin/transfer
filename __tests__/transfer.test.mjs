@@ -16,6 +16,12 @@ test(
 
 test(
     "", () => {
+        expect(transfer.compare(500, 100)).toBeGreaterThan(0);
+    }
+);
+
+test(
+    "", () => {
         const account1 = new transfer.Account(0, 200, 121);
         const account2 = new transfer.Account(0, 200, 170);
         const transfer1 = new transfer.Transfer(account1, account2, transfer.Transfer.TARGET.FROM, 10);

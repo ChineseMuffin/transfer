@@ -41,16 +41,16 @@ export function compare(balance1, balance2) {
         let priority1 = 0;
         let priority2 = 0;
         for (let i = 0; i < priority.length; i++) {
-            if (digit1 in priority[i]) priority1 = i;
-            if (digit2 in priority[i]) priority2 = i;
+            if (priority[i].includes(digit1)) priority1 = i; // JavaScriptではin演算子は要素ではなくメンバを調べる
+            if (priority[i].includes(digit2)) priority2 = i;
         }
         return priority1 - priority2;
     }
     function eachDigit(number) {
         let result = []
-        if (number == 0) result += [0];
+        if (number == 0) result.push(0);
         while (number > 0) {
-            result += [number % 10];
+            result.push(number % 10);
             number = Math.floor(number / 10);
         }
         return result;
@@ -58,8 +58,8 @@ export function compare(balance1, balance2) {
     let eachDigit1 = eachDigit(balance1);
     let eachDigit2 = eachDigit(balance2);
     const maxDigits = Math.max(eachDigit1.length, eachDigit2.length);
-    for (let i = 0; i < maxDigits - eachDigit1.length; i++) eachDigit1 += [0];
-    for (let i = 0; i < maxDigits - eachDigit2.length; i++) eachDigit2 += [0];
+    for (let i = 0; i < maxDigits - eachDigit1.length; i++) eachDigit1.push(0);
+    for (let i = 0; i < maxDigits - eachDigit2.length; i++) eachDigit2.push(0);
 
     for (let i = 0; i < maxDigits; i++) {
         let result = compareDigit(eachDigit1[i], eachDigit2[i]);
