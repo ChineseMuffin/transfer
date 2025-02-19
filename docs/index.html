@@ -21,7 +21,19 @@
             <input type="number" id="balanceTo" name="balanceTo" required>
         </form>
         <div>振替額</div>
-        <div id="result"></div>
+        <div id="result">0</div>
+    </div>
+    <div class="container">
+        <form>
+            <label for="minFrom">振替元の下限</label>
+            <input type="number" id="minFrom" name="minFrom">
+
+            <label for="maxTo">振替先の上限</label>
+            <input type="number" id="maxTo" name="maxTo">
+
+            <label for="minTransfer">最小振替額</label>
+            <input type="number" id="minTransfer" name="minTransfer">
+        </form>
     </div>
 
     <script type="module" src="./transfer.mjs"></script>
