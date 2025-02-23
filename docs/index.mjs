@@ -42,4 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     minTransfer.value = isParsableInt(url.searchParams.get("minTransfer")) ? url.searchParams.get("minTransfer") : DEFAULT_VALUES.minTransfer;
 
     onChange(null);
+
+    // 設定コンテナのボタン制御
+    document.getElementById("settings-button").addEventListener("click", () => {
+        const settingsContainer = document.getElementById("settings-container");
+        settingsContainer.classList.toggle("hidden"); // hiddenのon/off切り替え
+    });
 });
