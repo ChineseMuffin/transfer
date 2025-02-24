@@ -36,6 +36,8 @@ export class Account {
 }
 
 export function compare(balance1, balance2) {
+    balance1 = Math.abs(balance1);
+    balance2 = Math.abs(balance2);
     const priority = [[1, 2, 3, 4, 6, 7, 8, 9], [5], [0]]
     function compareDigit(digit1, digit2) {
         let priority1 = 0;
